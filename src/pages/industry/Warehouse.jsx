@@ -14,8 +14,17 @@ export default function Warehouse() {
           <LocationCard key={loc.id} {...loc} />
         ))}
       </div>
+      <h2 className="text-xl font-semibold mb-4 dark:text-white">ББ агуулах №1</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+         {locations.map((loc) => (
+          <LocationCard key={loc.id} {...loc} />
+        ))}
+        </div>
+     
     </div>
+  
   );
+  
 }
 
 function LocationCard({ title, temperature, humidity }) {
