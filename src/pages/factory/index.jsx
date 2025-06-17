@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 
-export default function Industry() {
+export default function Factory() {
   const subRoutes = [
     { label: "Агуулах", path: "warehouse" },
     { label: "Үйлдвэр", path: "factory" },
@@ -9,8 +9,7 @@ export default function Industry() {
   ];
 
   return (
-    <div className="p-6 font-sans">
-      {/* Дэд навигац */}
+    <div className="p-6 font-sans ">
       <div className="mb-8 space-x-4">
         {subRoutes.map(({ label, path }) => (
           <NavLink
@@ -18,7 +17,8 @@ export default function Industry() {
             to={path}
             className={({ isActive }) =>
               `px-4 py-2 rounded-full text-white font-medium ${
-                isActive ? "bg-green-900" : "bg-green-700"
+                isActive ? 'bg-[#4f7753] dark:bg-gray-700 !text-[#debb6d]' 
+                         : 'bg-[#063e0c] dark:bg-gray-900 text-[#debb6d] hover:text-[#debb6d]'
               }`
             }
           >
@@ -27,8 +27,8 @@ export default function Industry() {
         ))}
       </div>
 
-      {/* Дэд хуудсууд энд гарна */}
       <Outlet />
     </div>
   );
 }
+

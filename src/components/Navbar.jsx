@@ -12,33 +12,21 @@ export default function Navbar() {
   ];
 
   return (
-    <div className="p-2 bg-white">
-      <nav className="flex 
-                      items-center 
-                      justify-between 
-                      bg-[#063E0C] 
-                      border border-[#C2C2C2] 
-                      rounded-[40px] px-6 py-2 
-                      shadow-md">
-        {/* Logo */}
+    <div className="p-2 ">
+      <nav className="flex items-center justify-between bg-[#063E0C] dark:bg-gray-900 border border-[#C2C2C2] rounded-[40px] px-6 py-2 shadow-md">
         <div className="flex items-center gap-4">
-          <NavLink to="../pages/industry/Index.jsx">
-              <img src={logo} alt="logo" className="h-10" />
-          </NavLink>
+          <NavLink to="/industry"><img src={logo} alt="logo" className="h-10"/></NavLink>
         </div>
-
-        {/* Main Menu */}
-        <div className="flex items-center 
-                        gap-6 text-white 
-                        font-semibold">
+      <div className="flex items-center gap-6 text-white font-semibold">
           {menu.map((item, i) => (
             <NavLink
               key={i}
               to={item.to}
               className={({ isActive }) =>
                 `px-3 py-1 rounded-full ${
-                  isActive ? 'bg-[#4f7753] text-[#debb6d]' 
-                           : 'hover:text-[#DEBB6D]'
+                  isActive
+      ? 'bg-[#4f7753]/80 text-[#debb6d] dark:bg-gray-700/80 backdrop-blur-lg'
+      : 'text-white hover:text-[#DEBB6D]'
                 }`
               }
             >
@@ -46,8 +34,6 @@ export default function Navbar() {
             </NavLink>
           ))}
         </div>
-
-        {/* User profile */}
         <div className="flex items-center gap-2 text-[#debb6d] text-sm font-semibold" >
           <span>User</span>
           <NavLink to="/login" className="text-2xl">
